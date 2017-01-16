@@ -70,6 +70,13 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 break;
+            case R.id.generate_random:
+                Random rnd  = new Random();
+                for(int k = 0;k<10;++k)
+                {
+                    Log.i(TAG, "onOptionsItemSelected: generate _random" + (rnd.nextInt(80)));
+                    break;
+                }
             default:
                 break;
         }
@@ -116,6 +123,8 @@ public class MainActivity extends AppCompatActivity {
         // add a new series' to the xyplot:
         plot.addSeries(series1, series1Format);
         plot.addSeries(series2, series2Format);
+
+//        plot.addListener()
 
         plot.getGraph().getLineLabelStyle(XYGraphWidget.Edge.BOTTOM).setFormat(new Format() {
             @Override
