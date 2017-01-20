@@ -32,6 +32,10 @@ public class MainActivity extends AppCompatActivity {
     private XYPlot plot;
     private static final String TAG = "MainActivity";
 
+
+    private XYPlot dynamicPlot;
+//    private MyPlotUpdater plotUpdater
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);

@@ -26,7 +26,7 @@ public class SecondActivity extends AppCompatActivity {
 
     private XYPlot dynamicPlot;
     private MyPlotUpdater plotUpdater;
-    SampleDynamicXYDatasource data;
+//    SampleDynamicXYDatasource data;
     private Thread myThread;
 
     @Override

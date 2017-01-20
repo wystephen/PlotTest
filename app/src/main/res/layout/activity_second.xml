@@ -20,6 +20,6 @@
         ap:domainTitle="domain"
         ap:lineLabels="left|bottom"
         ap:lineLabelRotationBottom="-45"
-        ap:renderMode="use_background_thread"/><
+        ap:renderMode="use_background_thread"/>
 
 </RelativeLayout>
