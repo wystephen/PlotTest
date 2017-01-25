@@ -4,5 +4,7 @@
         android:title="show_ip"/>
     <item android:id="@+id/generate_random"
         android:title="get random"/>
+    <item android:id="@+id/showdynamic"
+        android:title="getdynamicframe"/>
 
 </menu>

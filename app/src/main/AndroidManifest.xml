@@ -22,7 +22,8 @@
         <activity
             android:name=".DynamicXYPlotActivity"
             android:label="@string/title_activity_dynamic_xyplot"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>

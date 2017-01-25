@@ -1,5 +1,6 @@
 package com.example.steve.plottest;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -81,6 +82,12 @@ public class MainActivity extends AppCompatActivity {
                     Log.i(TAG, "onOptionsItemSelected: generate _random" + (rnd.nextInt(80)));
                     break;
                 }
+                break;
+            case R.id.showdynamic:
+                Intent aintent = new Intent(MainActivity.this,DynamicXYPlotActivity.class);
+                startActivity(aintent);
+                break;
+
             default:
                 break;
         }

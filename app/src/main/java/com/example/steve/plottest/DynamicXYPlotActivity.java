@@ -84,7 +84,7 @@ public class DynamicXYPlotActivity extends Activity {
 
         // android boilerplate stuff
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.dynamic_xyplot_example);
+        setContentView(R.layout.activity_dynamic_xyplot);
 
         // get handles to our View defined in layout.xml:
         dynamicPlot = (XYPlot) findViewById(R.id.dynamicXYPlot);
