@@ -16,8 +16,14 @@
         android:layout_height="wrap_content"
         android:text="Hello World!" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Show internet information"
+        android:id="@+id/ShowServer"/>
 
-    <com.androidplot.xy.XYPlot
+
+    <!--<com.androidplot.xy.XYPlot-->
         style="@style/APDefacto"
         android:id="@+id/plot"
         android:layout_width="fill_parent"
