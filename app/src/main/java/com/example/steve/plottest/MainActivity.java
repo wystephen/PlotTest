@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
 
         plot = (XYPlot) findViewById(R.id.plot);
 
-        final Number[] domainLabels = {1, 2, 3, 6, 7, 8, 9, 10, 12, 14};
+        final Number[] domainLabels = {1, 2, 3, 6, 7, 5, 4, 3, 2, 1.5};
         Number[] series1Numbers = {1, 4, 2, 7, 4, 14, 11, 32, 15, 54};
         Number[] series2Numbers = {5, 2, 10, 5, 20, 10, 40, 20, 80, 40};
 
