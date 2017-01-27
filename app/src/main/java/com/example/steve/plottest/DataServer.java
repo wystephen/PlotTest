@@ -87,6 +87,7 @@ public class DataServer extends Service {
                     }
                 }catch (Exception e)
                 {
+                    
                     Log.d(TAG, "StartServer: "+e.getMessage());
                 }
             }
