@@ -87,6 +87,11 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(aintent);
                 break;
 
+            case R.id.starttcpserver:
+//                Intent tcp_intent = new Intent("com.example.steve.plottest.tcpserver");
+                Intent tcp_intent = new Intent(this,DataServer.class);
+//                startActionMode(tcp_intent);
+                startService(tcp_intent);
             default:
                 break;
         }

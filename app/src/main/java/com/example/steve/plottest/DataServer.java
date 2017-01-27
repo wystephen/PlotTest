@@ -18,9 +18,11 @@ public class DataServer extends Service {
 
     private List<Socket> mList = new ArrayList<Socket>();
     private ServerSocket server = null;
-    private Socket socket = null;
+    private Socket tmp_socket = null;
     private ExecutorService mExecutorService = null; // thread pool;
 
+    
+    private SingleSocketProcess singleprocess;
 
     private static final String TAG = "DataServer";
 
@@ -37,6 +39,8 @@ public class DataServer extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
+        Log.d(TAG, "onCreate: create'");
+
     }
 
     @Override
@@ -46,21 +50,44 @@ public class DataServer extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-//        return super.onStartCommand(intent, flags, startId);
-
-        return 0;
+        Log.d(TAG, "onStartCommand: beging the function.");
+//        singleprocess.run();
+//        StartServer();
+        return super.onStartCommand(intent, flags, startId);
     }
 
     private Boolean StartServer()
     {
         try{
-
-
-        }catch (Exception e)
+           server = new ServerSocket(PORT);
+            Log.d(TAG, "StartServer: " + server.toString());
+            while(true)
+            {
+                tmp_socket = server.accept();
+            }
+       }catch (Exception e)
         {
             Log.d(TAG, "StartServer: "+e.getMessage());
         }
-
         return true;
+    }
+    class SingleSocketProcess implements Runnable{
+        @Override
+        public void run() {
+            
+            while(true)
+            {
+                try{
+                    
+                    if(mList.size()>0)
+                    {
+                        Log.d(TAG, "run: " + mList.size());
+                    }
+                }catch (Exception e)
+                {
+                    Log.d(TAG, "StartServer: "+e.getMessage());
+                }
+            }
+        }
     }
 }

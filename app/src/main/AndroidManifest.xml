@@ -27,7 +27,11 @@
         <service
             android:name=".DataServer"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.example.steve.plottest.tcpserver"/>
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

@@ -6,5 +6,7 @@
         android:title="get random"/>
     <item android:id="@+id/showdynamic"
         android:title="getdynamicframe"/>
+    <item android:id="@+id/starttcpserver"
+        android:title="start tcp server"/>
 
 </menu>
