@@ -39,7 +39,7 @@ public class DataServer extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-        Log.d(TAG, "onCreate: create'");
+        Log.i(TAG, "onCreate: create'");
 
     }
 
@@ -50,9 +50,10 @@ public class DataServer extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        Log.d(TAG, "onStartCommand: beging the function.");
-//        singleprocess.run();
-//        StartServer();
+        Log.i(TAG, "onStartCommand: beging the function.");
+        singleprocess = new SingleSocketProcess();
+        singleprocess.run();
+        StartServer();
         return super.onStartCommand(intent, flags, startId);
     }
 
@@ -60,14 +61,14 @@ public class DataServer extends Service {
     {
         try{
            server = new ServerSocket(PORT);
-            Log.d(TAG, "StartServer: " + server.toString());
+            Log.i(TAG, "StartServer: " + server.toString());
             while(true)
             {
                 tmp_socket = server.accept();
             }
        }catch (Exception e)
         {
-            Log.d(TAG, "StartServer: "+e.getMessage());
+            Log.i(TAG, "StartServer: "+e.getMessage());
         }
         return true;
     }
@@ -81,7 +82,7 @@ public class DataServer extends Service {
                     
                     if(mList.size()>0)
                     {
-                        Log.d(TAG, "run: " + mList.size());
+                        Log.i(TAG, "run: " + mList.size());
                     }
                 }catch (Exception e)
                 {

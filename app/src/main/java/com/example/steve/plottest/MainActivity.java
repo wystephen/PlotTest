@@ -78,23 +78,22 @@ public class MainActivity extends AppCompatActivity {
                 Random rnd  = new Random();
                 for(int k = 0;k<10;++k)
                 {
-                    Log.i(TAG, "onOptionsItemSelected: generate _random" + (rnd.nextInt(80)));
+                    Log.i(TAG, "onOptionsItemSelected: generate_random " + (rnd.nextInt(80)));
                     break;
                 }
                 break;
 
             case R.id.showdynamic:
-                Log.d(TAG, "onOptionsItemSelected: Show Dynamic data test activity");
+                Log.i(TAG, "onOptionsItemSelected: Show Dynamic data test activity");
                 Intent aintent = new Intent(MainActivity.this,DynamicXYPlotActivity.class);
                 startActivity(aintent);
                 break;
 
             case R.id.starttcpserver:
 //                Intent tcp_intent = new Intent("com.example.steve.plottest.tcpserver");
-//                Intent tcp_intent = new Intent(this,DataServer.class);
-//                startActionMode(tcp_intent);
-//                startService(tcp_intent);
-                Log.d(TAG, "onOptionsItemSelected: Try to open new server");
+                Intent tcp_intent = new Intent(this,DataServer.class);
+                startService(tcp_intent);
+                Log.i(TAG, "onOptionsItemSelected: Try to open new server");
                 break;
 
             default:
