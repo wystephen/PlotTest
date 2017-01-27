@@ -82,16 +82,21 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 }
                 break;
+
             case R.id.showdynamic:
+                Log.d(TAG, "onOptionsItemSelected: Show Dynamic data test activity");
                 Intent aintent = new Intent(MainActivity.this,DynamicXYPlotActivity.class);
                 startActivity(aintent);
                 break;
 
             case R.id.starttcpserver:
 //                Intent tcp_intent = new Intent("com.example.steve.plottest.tcpserver");
-                Intent tcp_intent = new Intent(this,DataServer.class);
+//                Intent tcp_intent = new Intent(this,DataServer.class);
 //                startActionMode(tcp_intent);
-                startService(tcp_intent);
+//                startService(tcp_intent);
+                Log.d(TAG, "onOptionsItemSelected: Try to open new server");
+                break;
+
             default:
                 break;
         }
