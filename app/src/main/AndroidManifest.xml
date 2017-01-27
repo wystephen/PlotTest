@@ -22,8 +22,12 @@
         <activity
             android:name=".DynamicXYPlotActivity"
             android:label="@string/title_activity_dynamic_xyplot"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+
+        <service
+            android:name=".DataServer"
+            android:enabled="true"
+            android:exported="true"></service>
     </application>
 
 </manifest>
