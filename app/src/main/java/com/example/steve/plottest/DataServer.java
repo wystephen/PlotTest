@@ -73,7 +73,8 @@ public class DataServer extends Service {
         }
         return true;
     }
-    class SingleSocketProcess implements Runnable{
+
+    class SingleSocketProcess extends Thread {
         @Override
         public void run() {
             
