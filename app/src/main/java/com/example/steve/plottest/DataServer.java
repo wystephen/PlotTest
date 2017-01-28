@@ -53,7 +53,7 @@ public class DataServer extends Service {
         Log.i(TAG, "onStartCommand: beging the function.");
         singleprocess = new SingleSocketProcess();
         singleprocess.run();
-        StartServer();// Should not be a loop for ever...
+//        StartServer();// Should not be a loop for ever...
         //TODO: Add a new thread to accept the socket.
         return super.onStartCommand(intent, flags, startId);
     }
@@ -87,7 +87,7 @@ public class DataServer extends Service {
                     }
                 }catch (Exception e)
                 {
-                    
+
                     Log.d(TAG, "StartServer: "+e.getMessage());
                 }
             }
