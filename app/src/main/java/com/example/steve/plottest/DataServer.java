@@ -2,7 +2,9 @@ package com.example.steve.plottest;
 
 import android.app.Service;
 import android.content.Intent;
+import android.content.pm.Signature;
 import android.os.IBinder;
+import android.text.LoginFilter;
 import android.util.Log;
 
 import java.util.ArrayList;
@@ -51,12 +53,19 @@ public class DataServer extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         Log.i(TAG, "onStartCommand: beging the function.");
-        singleprocess = new SingleSocketProcess();
-        singleprocess.run();
+
+//        singleprocess = new SingleSocketProcess();
+        Log.i(TAG, "onStartCommand: Create new SingleSocketProcess thread.");
+//        singleprocess.run();
+        new SingleSocketProcess().start();
+
+        Log.i(TAG, "onStartCommand: After run().");
+
 //        StartServer();// Should not be a loop for ever...
         //TODO: Add a new thread to accept the socket.
         return super.onStartCommand(intent, flags, startId);
     }
+
 
     private Boolean StartServer()
     {
@@ -86,6 +95,7 @@ public class DataServer extends Service {
                     {
                         Log.i(TAG, "run: " + mList.size());
                     }
+//                    Log.i(TAG, "run: mList.size() == 0");
                 }catch (Exception e)
                 {
 
