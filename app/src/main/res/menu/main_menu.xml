@@ -8,5 +8,7 @@
         android:title="getdynamicframe"/>
     <item android:id="@+id/starttcpserver"
         android:title="start tcp server"/>
+    <item android:id="@+id/stoptcpserver"
+        android:title="Stop tcp server"/>
 
 </menu>
