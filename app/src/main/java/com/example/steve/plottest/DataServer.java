@@ -107,7 +107,7 @@ public class DataServer extends Service {
                     
                     if(mList.size()>0)
                     {
-                        Log.i(TAG, "run: " + mList.size());
+//                        Log.i(TAG, "run: " + mList.size());
                         Socket stmp;
                         for(int i = 0;i<mList.size();++i)
                         {
@@ -115,8 +115,10 @@ public class DataServer extends Service {
                             if(stmp.isClosed())
                             {
                                 mList.remove(i);
+                                Log.i(TAG, "run: remove socket");
                                 break;
                             }
+                            Log.i(TAG, "run: socket information" + stmp.getOutputStream());
                         }
                     }
 //                    Log.i(TAG, "run: mList.size() == 0");
