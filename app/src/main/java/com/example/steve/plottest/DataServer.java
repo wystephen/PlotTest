@@ -53,13 +53,15 @@ public class DataServer extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         Log.i(TAG, "onStartCommand: beging the function.");
-
+        new TcpServerBind().start();//start bind...
 //        singleprocess = new SingleSocketProcess();
         Log.i(TAG, "onStartCommand: Create new SingleSocketProcess thread.");
 //        singleprocess.run();
         new SingleSocketProcess().start();
 
         Log.i(TAG, "onStartCommand: After run().");
+
+
 
 //        StartServer();// Should not be a loop for ever...
         //TODO: Add a new thread to accept the socket.
@@ -70,17 +72,29 @@ public class DataServer extends Service {
     private Boolean StartServer()
     {
         try{
+            if(mList.size()>0)
+            {
+                mList.clear();
+
+            }
            server = new ServerSocket(PORT);
             Log.i(TAG, "StartServer: " + server.toString());
             while(true)
             {
                 tmp_socket = server.accept();
+                mList.add(tmp_socket);
             }
        }catch (Exception e)
         {
             Log.i(TAG, "StartServer: "+e.getMessage());
         }
         return true;
+    }
+    class TcpServerBind extends Thread{
+        @Override
+        public void run() {
+            StartServer();
+        }
     }
 
     class SingleSocketProcess extends Thread {
@@ -94,6 +108,16 @@ public class DataServer extends Service {
                     if(mList.size()>0)
                     {
                         Log.i(TAG, "run: " + mList.size());
+                        Socket stmp;
+                        for(int i = 0;i<mList.size();++i)
+                        {
+                            stmp = mList.get(i);
+                            if(stmp.isClosed())
+                            {
+                                mList.remove(i);
+                                break;
+                            }
+                        }
                     }
 //                    Log.i(TAG, "run: mList.size() == 0");
                 }catch (Exception e)
