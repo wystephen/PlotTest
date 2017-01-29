@@ -96,8 +96,8 @@ public class MainActivity extends AppCompatActivity {
                 Log.i(TAG, "onOptionsItemSelected: Try to open new server");
                 break;
             case R.id.stoptcpserver:
-//                Intent tcp_intent2 = new Intent(this,DataServer.class);
-                stopService(tcp_intent);
+                Intent tcp_intent2 = new Intent(this,DataServer.class);
+                stopService(tcp_intent2);
 
 
                 break;
