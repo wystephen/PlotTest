@@ -120,8 +120,9 @@ public class DataServer extends Service {
                             }
                             Log.i(TAG, "run: socket information" + stmp.getOutputStream());
                         }
+                    }else{
+                        Log.i(TAG, "run: mList.size() == 0");
                     }
-//                    Log.i(TAG, "run: mList.size() == 0");
                 }catch (Exception e)
                 {
 
