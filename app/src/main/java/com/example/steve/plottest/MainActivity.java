@@ -32,7 +32,7 @@ import java.net.NetworkInterface.*;
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
-
+    private Intent tcp_intent = new Intent(this,DataServer.class);
 
 //    private MyPlotUpdater plotUpdater
 
@@ -91,13 +91,13 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.starttcpserver:
 //                Intent tcp_intent = new Intent("com.example.steve.plottest.tcpserver");
-                Intent tcp_intent = new Intent(this,DataServer.class);
+
                 startService(tcp_intent);
                 Log.i(TAG, "onOptionsItemSelected: Try to open new server");
                 break;
             case R.id.stoptcpserver:
-                Intent tcp_intent2 = new Intent(this,DataServer.class);
-                stopService(tcp_intent2);
+//                Intent tcp_intent2 = new Intent(this,DataServer.class);
+                stopService(tcp_intent);
 
 
                 break;
